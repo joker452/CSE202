@@ -103,11 +103,9 @@ int main()
 
             /* output to file */
             std::ofstream out("output.txt");
-            out << (sum == 0 ? 1 : 0) << "\n";
-            if (sum == 0)
-            {
-                for (int i = 0; i < n; ++i)
-                {
+            if (sum == 0) {
+                out << 1 << "\n";
+                for (int i = 0; i < n; ++i) {
                     out << matrix[i][0];
                     for (int j = 1; j < n; ++j)
                     {
@@ -118,6 +116,8 @@ int main()
                         out << "\n";
                     }
                 }
+            } else {
+                out << 0;
             }
             out.close();
         }
